@@ -1,0 +1,48 @@
+body {
+  padding: 20px;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+}
+
+.check__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+}
+
+.check__box {
+  position: relative;
+  display: inline-block;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  background: #dbdff1;
+  border-radius: 5px;
+}
+
+.check__box::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M20 6L9 17L4 12' stroke='%239292C1' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ");
+  background-color: #023aff;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.check__input:checked + .check__box::before {
+  opacity: 1;
+}
+
+.name {
+  margin: 5px;
+}
